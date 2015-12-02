@@ -1,16 +1,37 @@
-<h1>Contacts</h1>
+<h1>Contacts Directory</h1>
 
+<!-- Buttons -->
 <div>
-  <ul id="menu">
-    <li><a href="/" id="newContact">New Contact</a></li>
-    <li><a href="/" id="showAll">List All Contacts</a></li>
-    <li><a href="/" id="showOne">Show A Contact (search by ID)</a></li>
-    <li><a href="/" id="contactSearch">Search For A Contact</a></li>
-  </ul>
+  <button id="showOne">Search by ID</button>
+  <button id="contactSearch">Search by Name/Email</button>
+  <button id="newContact">Add New Contact</button>
+  <button id="showAll">See All Contacts</button>
 </div>
 
-<button id="see_contacts">See Contacts</button>
+<!-- Have this appear only when the #newContact button is pushed -->
+<fieldset>
+  <legend>Add New Contact</legend>
+  <input type="text" id="firstname" placeholder="First Name"><br>
+  <input type="text" id="lastname" placeholder="Last Name"><br>
+  <input type="text" id="email" placeholder="Email"><br>
+  <button id="add_person">Add Contact</button><br>
+</fieldset>
 
+<!-- Have it only appear #contactSearch button is pushed -->
+<fieldset>
+  <legend>Search For A Contact By Name</legend>
+  <input type="text" id="name_or_email" placeholder="Name or Email"><br>
+  <button id="search_name">Search</button><br>
+</fieldset>
+
+<!-- Have it only appear when #showOne button is pushed -->
+<fieldset>
+  <legend>Search For A Contact By ID</legend>
+  <input type="integer" id="id" placeholder="Contact ID"><br>
+  <button id="search_id">Search</button><br>
+</fieldset>
+
+<!-- The table that displays the contacts -->
 <div id="results">
   <table id="people">
     <thead>

@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class Contact < ActiveRecord::Base
 
   has_many :phone_numbers
 
