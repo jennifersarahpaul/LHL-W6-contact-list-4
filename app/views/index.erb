@@ -1,6 +1,5 @@
 <h1>Contacts Directory</h1>
 
-<!-- Buttons -->
 <div>
   <button id="showOne">Search by ID</button>
   <button id="contactSearch">Search by Name/Email</button>
@@ -8,7 +7,7 @@
   <button id="showAll">See All Contacts</button>
 </div>
 
-<!-- Form: Add New Contact -->
+<!-- Form: add new contact -->
 <fieldset class="hidden" id="newContactForm">
   <legend>Add New Contact</legend>
   <input type="text" id="firstname" placeholder="First Name"><br>
@@ -17,7 +16,6 @@
   <button id="addPerson">Add Contact</button><br>
 </fieldset>
 
-<!-- Have it only appear #contactSearch button is pushed -->
 <!-- Form: search for a contact by name/email -->
 <fieldset class="hidden" id="newSearchForm">
   <legend>Search For A Contact By Name</legend>
@@ -25,7 +23,6 @@
   <button id="searchName">Search</button><br>
 </fieldset>
 
-<!-- Have it only appear when #showOne button is pushed -->
 <!-- Form: search for a contact by ID -->
 <fieldset class="hidden" id="newIdSearchForm">
   <legend>Search For A Contact By ID</legend>
@@ -34,7 +31,6 @@
 </fieldset>
 
 <!-- The table that displays the contacts -->
-
 <table class="hidden" id="people">
   <thead>
     <tr>
@@ -47,3 +43,14 @@
   <tbody>
   </tbody>
 </table>
+
+
+<!-- TODO: 
+- new contact appears at the bottom when added
+- form resets when 'Add Contact' button is pushed
+- search for contact by name
+- search for contact by email
+- add 'clear' button to add contact, search ID, and search name forms
+- table header appears at different speed than table data
+- have a delete button beside each contact?
+- format using CSS/bootstrap -->

@@ -18,3 +18,8 @@ post '/contact/new' do
   end
   results.to_json
 end
+
+# TODO: make these routes
+# '/contact/find/:id'
+# '/contact/find/name_or_email'
+# '/contact/:id/delete'
