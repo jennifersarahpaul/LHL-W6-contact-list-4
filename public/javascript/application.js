@@ -1,25 +1,12 @@
 $(function() {
 
-  // $("#menu").on('click', function(e) {
-  //   e.preventDefault();
-  //   console.log("SUCCESS");
-  //   var temp = e.target.id;
-  // });
-
-// $('#newContact').get()
-
-// $('#showAll')
-// $('#showOne')
-// $('#contactSearch')
-
 // for the first 3, specify the data type as JSON
 // $.get()
 // $.post()
 // $.ajax
 // $.getJSON()
 
-
-  // Displays all contacts
+  // "Handlers" to reuse
   var handlers = {
     container: $('#people').find('tbody'), 
     addContact: function(index, contact) {
@@ -33,23 +20,42 @@ $(function() {
       $.each(contacts, handlers.addContact);
     }, 
     getContacts: function() {
+      $('#people').toggleClass('hidden');
       $.getJSON("/contacts", handlers.receiveContacts);
     }
   };
+
+  // Display all contacts
   $('#showAll').on('click', handlers.getContacts);
 
-  // Creating a new contact
+  // Create a new contact
   $('#newContact').on('click', function() {
+    $('#newContactForm').toggleClass('hidden');
+  });
+
+  $('#addPerson').on('click', function(e) {
+    e.preventDefault;
     var firstname = $('#firstname').val();
     var lastname = $('#lastname').val();
     var email = $('#email').val();
-    $.post('/contacts/new', contact, function(data) {
+    var contact = {firstname: firstname, lastname: lastname, email: email};
+    $.post('/contact/new', contact, function(data) {
       if (data.result) {
-        handlers.addPlayer(0, player); 
+        handlers.addContact(0, contact); 
       } else {
-        alert("Unable to create player.");
+        alert("Unable to create contact.");
       }
     }, 'json');
+  });
+
+  // Search for contact by name/email
+  $('#contactSearch').on('click', function() {
+    $('#newSearchForm').toggleClass('hidden');
+  });
+
+  // Search for contact by ID
+  $('#showOne').on('click', function() {
+    $('#newIdSearchForm').toggleClass('hidden');
   });
   
 });

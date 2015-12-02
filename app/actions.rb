@@ -6,7 +6,7 @@ get '/contacts' do
   Contact.all.to_json
 end
 
-post '/contacts/new' do
+post '/contact/new' do
   results = {result: false}
   firstname = params[:firstname]
   lastname = params[:lastname]
@@ -14,7 +14,7 @@ post '/contacts/new' do
   contact = Contact.new firstname: firstname, lastname: lastname, email: email
   if contact.save
     results[:result] = true
-    results[:contact_id] = contact.contact_id
+    results[:contact_id] = contact.id
   end
   results.to_json
 end
