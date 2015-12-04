@@ -1,11 +1,5 @@
 $(function() {
 
-// for the first 3, specify the data type as JSON
-// $.get()
-// $.post()
-// $.ajax
-// $.getJSON()
-
   // "Handlers" to reuse
   var handlers = {
     container: $('#people').find('tbody'), 
@@ -57,5 +51,26 @@ $(function() {
   $('#showOne').on('click', function() {
     $('#newIdSearchForm').toggleClass('hidden');
   });
-  
+
+  // Instagram API
+  $(function() {
+    $('#diversionButton').on('click', function() {
+      $.ajax({
+        url: "https://api.instagram.com/v1/tags/christmasdecorations/media/recent?access_token=2306730953.5b9e1e6.2b20db39aea648f384af7a1a2475175f",
+        success: function(response){
+
+          for(var i = 0; i <= 20; i++) {
+            var imageUrl = response.data[i].images.standard_resolution.url;
+            var itemClass;
+            i === 0 ? itemClass = "item active" : itemClass = 'item';
+            var image = '<div class="' + itemClass + '"><img src="'+imageUrl+ '" alt="..."/></div>';
+            $('#showingPicture').append(image);
+          };
+          $('.carousel').carousel();
+        },
+        dataType: 'jsonp'
+      });
+    });
+  });
+  // my access_token: 2306730953.1cbb547.5a1f0c0af3b94f098c569dcfda98569b
 });
