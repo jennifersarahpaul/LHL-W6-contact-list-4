@@ -4,9 +4,15 @@
 
 #slideshow {
   position: relative;
+
 }
 
 .photos {
   position: absolute;
   top: 0;
+}
+
+#showingPicture {
+  width: 40%;
+  margin: 3% auto;
 }

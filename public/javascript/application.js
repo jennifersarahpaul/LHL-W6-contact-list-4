@@ -58,7 +58,7 @@ $(function() {
       $.ajax({
         url: "https://api.instagram.com/v1/tags/christmasdecorations/media/recent?access_token=2306730953.5b9e1e6.2b20db39aea648f384af7a1a2475175f",
         success: function(response){
-          console.log(response)
+
           for(var i = 0; i <= 20; i++) {
             var imageUrl = response.data[i].images.standard_resolution.url;
             var itemClass;
