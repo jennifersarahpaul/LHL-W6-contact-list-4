@@ -1,3 +1,5 @@
+
+
 <h1>Contacts Directory</h1>
 
 <div>
@@ -5,6 +7,7 @@
   <button id="contactSearch">Search by Name/Email</button>
   <button id="newContact">Add New Contact</button>
   <button id="showAll">See All Contacts</button>
+  <button id="diversionButton">Diversion!</button>
 </div>
 
 <!-- Form: add new contact -->
@@ -44,6 +47,30 @@
   </tbody>
 </table>
 
+<!-- Section that shows an Instagram slideshow (carousel)-->
+<div id="carousel-example-generic slideshow" class="carousel slide" data-ride="carousel" data-interval="3000">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" id="showingPicture" role="listbox">
+    <!-- Data from application.js file (the photos) populated here -->
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"></a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"></a>
+</div>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 
 <!-- TODO: 
 - new contact appears at the bottom when added
@@ -53,4 +80,5 @@
 - add 'clear' button to add contact, search ID, and search name forms
 - table header appears at different speed than table data
 - have a delete button beside each contact?
+- fix all-contacts where it doesn't clear (just keeping adding duplicate contacts)
 - format using CSS/bootstrap -->
